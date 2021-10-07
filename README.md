@@ -27,4 +27,27 @@ Using ```address.transfer()``` to instead ```address.send()``` and ```address.ca
 
 Contracts need to check whether the caller has permissions in some functions like suicide (L33 in Listing 1). The failure of permission checks can cause serious consequences. For example, if someone passes the permission check of suicide function, he/she can destroy the contract and stole all the Ethers. tx.origin can get the original address that kicked off the transaction, but this method is not reliable since the address returned by this method depends on the transaction state.
 
-3.)
+3.) DOS Under External Infuence
+
+```REF```:https://arxiv.org/pdf/1905.01467.pdf 
+
+```// Send 0.1 ETH to all members as bonus
+function giveBonus() returns (bool) {
+    /** Unmatched Type Assignment */
+    for (uint256 i = 0; i < members.length; i++) {
+        if (this.balance > 0.1 ether) {
+            /** DoS Under External Influence */
+            members[i].transfer(0.1 ether);
+        }
+    }
+    /** Missing Return Statement */
+} ```
+
+When an exception is detected, the smart contract will rollback the transaction. However, throwing exceptions inside a loop is dangerous.
+
+```Example```
+
+In ```line 33``` of Listing 1, the contract uses ```transfer``` to send Ethers. However, In Solidity, ```transfer``` and ```send``` will limit the gas of ```fallback function``` in callee contracts to 2,300 gas. This gas is not enough to write to storage, call functions or send Ethers. If one of ```member[i]``` is an attacker’s smart contract and the transfer function (L33) can trigger an out-of-gas exception due to the ```2,300 gas limitation```. Then, the contract state will rollback. Since the code cannot be modified, the contract can not remove the attacker from members list, which means that if the attacker does not stop attacking, no one can get bonus anymore.
+
+```Possible Solution```
+Avoid throwing exceptions in the body of a loop. We can return a boolean value instead of throwing an exception. For example, using ```if(msg.send(…​) == false) break;``` instead of using ```msg.transfer.```
