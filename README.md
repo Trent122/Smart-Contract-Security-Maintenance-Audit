@@ -4,14 +4,14 @@ Research Papers focused on Smart-contracts security topics. As well as listing a
 1. Unchecked External Calls
 REF: https://arxiv.org/pdf/1905.01467.pdf
 
-// Choose a member to be the winner
+```// Choose a member to be the winner
 function getWinner() {
     /* Block Info Dependency */
      uint winnerID = uint(block.blockhash(block.number)) % participants.length;
      participants[winnerID].send(8 ether);
      participatorID = 0;
 }
-
+```
 To transfer Ethers or call functions of other smart contracts, Solidity provides a series of external call functions for raw addresses, i.e., address.send(), address.call(), address.delegatecall(). Unfortunately, these methods may fail due to network errors or out-of-gas error, e.g., the 2300 gas limitation of fallback function introduced in Section 2. When errors happen, these methods will return a boolean value (False), but never throw an exception. If callers do not check return values of external calls, they cannot ensure whether code logic is correct.
 
 Example
