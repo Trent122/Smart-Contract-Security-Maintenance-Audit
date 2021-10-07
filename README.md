@@ -27,7 +27,7 @@ Using ```address.transfer()``` to instead ```address.send()``` and ```address.ca
 
 Contracts need to check whether the caller has permissions in some functions like suicide (L33 in Listing 1). The failure of permission checks can cause serious consequences. For example, if someone passes the permission check of suicide function, he/she can destroy the contract and stole all the Ethers. tx.origin can get the original address that kicked off the transaction, but this method is not reliable since the address returned by this method depends on the transaction state.
 
-3.) DOS Under External Infuence
+3.) ```DOS Under External Infuence```
 
 ```REF```:https://arxiv.org/pdf/1905.01467.pdf 
 
