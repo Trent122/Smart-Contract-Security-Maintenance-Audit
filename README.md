@@ -2,7 +2,7 @@
 Research Papers focused on Smart-contracts security topics. As well as listing all the encountered smart-contracts defects with a summary description. 🛡️
 
 1. Unchecked External Calls
-REF: https://arxiv.org/pdf/1905.01467.pdf
+``REF```: https://arxiv.org/pdf/1905.01467.pdf
 
 ```// Choose a member to be the winner
 function getWinner() {
@@ -21,3 +21,8 @@ An example of this defect is given in Listing 1. In function getWinner (L23), th
 ```Possible Solution```
 
 Using ```address.transfer()``` to instead ```address.send()``` and ```address.call.value()``` if possible, or Checking the return value of send and call. 
+
+```Transaction State Dependency```
+``REF```:https://arxiv.org/pdf/1905.01467.pdf```
+
+Contracts need to check whether the caller has permissions in some functions like suicide (L33 in Listing 1). The failure of permission checks can cause serious consequences. For example, if someone passes the permission check of suicide function, he/she can destroy the contract and stole all the Ethers. tx.origin can get the original address that kicked off the transaction, but this method is not reliable since the address returned by this method depends on the transaction state.
