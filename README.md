@@ -19,4 +19,5 @@ To transfer Ethers or call functions of other smart contracts, Solidity provides
 An example of this defect is given in Listing 1. In function getWinner (L23), the contract does not check the return value of send (L26), but the array participants is emptied by assigning participatorID to 0 (L25). In this case, if the send method failed, the winner will lose 8 Ethers.
 
 ```Possible Solution```
+
 Using ```address.transfer()``` to instead ```address.send()``` and ```address.call.value()``` if possible, or Checking the return value of send and call. 
