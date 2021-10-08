@@ -73,3 +73,6 @@ https://www.coindesk.com/learn/2016/06/25/understanding-the-dao-attack/
 ```Datasets```
 https://github.com/Jiachi-Chen/TSE-ContractDefects 
 
+
+```Not-So-Smart-Contracts```
+https://github.com/Trent122/not-so-smart-contracts
