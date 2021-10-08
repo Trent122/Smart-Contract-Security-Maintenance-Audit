@@ -1,6 +1,11 @@
 # Smart-Contract-Security-Maintenance
 Research Papers focused on Smart-contracts security topics. As well as listing all the encountered smart-contracts defects with a summary description. 🛡️
 
+
+![1_Sq3E9pFatJP0IRjvY3j3XQ](https://user-images.githubusercontent.com/59753390/136479198-dc493cc0-5de5-4014-baca-9424353be037.jpg)
+
+
+
 1.) ```Unchecked External Calls```
 ```REF```: https://arxiv.org/pdf/1905.01467.pdf
 
@@ -51,3 +56,20 @@ In ```line 33``` of Listing 1, the contract uses ```transfer``` to send Ethers. 
 
 ```Possible Solution```
 Avoid throwing exceptions in the body of a loop. We can return a boolean value instead of throwing an exception. For example, using ```if(msg.send(…​) == false) break;``` instead of using ```msg.transfer.```
+
+```Research Papers```
+
+```May,2021```
+
+https://arxiv.org/pdf/2105.02881.pdf: Abstract—Ethereum Smart contracts use blockchain to transfer values among peers on networks without central agency. These programs are deployed on decentralized applications running on top of the blockchain consensus protocol to enable people make agreements in a transparent and conflict free environment. The security vulnerabilities within those smart contracts are a potential threat to the applications and have caused huge financial losses to their users. In this paper, we present a framework that combines static and dynamic analysis to detect Reentrancy vulnerabilities in Ethereum smart contracts. This framework generates an attacker contract based on the ABI specifications of smart contracts under test and analyzes the contract interaction to precisely report Reentrancy vulnerability. We conducted a preliminary evaluation of our proposed framework on 5 modified smart contracts from Etherscan and our framework was able to detect the Reentrancy vulnerability in all our modified contracts. Our framework analyzes smart contracts statically to identify potentially vulnerable functions and then uses dynamic analysis to precisely confirm Reentrancy vulnerability, thus achieving increased performance and reduced false positives.
+
+```April,2020```
+https://arxiv.org/pdf/1905.01467.pdf:Abstract—Smart contracts are programs running on a blockchain. They are immutable to change, and hence can not be patched for bugs once deployed. Thus it is critical to ensure they are bug-free and well-designed before deployment. A Contract defect is an error, flaw or fault in a smart contract that causes it to produce an incorrect or unexpected result, or to behave in unintended ways. The detection of contract defects is a method to avoid potential bugs and improve the design of existing code. Since smart contracts contain numerous distinctive features, such as the gas system. decentralized, it is important to find smart contract specified defects. To fill this gap, we collected smart-contract-related posts from Ethereum StackExchange, as well as real-world smart contracts. We manually analyzed these posts and contracts; using them to define 20 kinds of contract defects. We categorized them into indicating potential security, availability, performance, maintainability and reusability problems. To validate if practitioners consider these contract as harmful, we created an online survey and received 138 responses from 32 different countries. Feedback showed these contract defects are harmful and removing them would improve the quality and robustness of smart contracts. We manually identified our defined contract defects in 587 real world smart contract and publicly released our dataset. Finally, we summarized 5 impacts caused by contract defects. These help developers better understand the symptoms of the defects and removal priority.
+
+```Famous Attacks```
+1.) The DAO Attack
+https://www.coindesk.com/learn/2016/06/25/understanding-the-dao-attack/
+
+```Datasets```
+https://github.com/Jiachi-Chen/TSE-ContractDefects 
+
