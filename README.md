@@ -80,7 +80,7 @@ https://github.com/Trent122/not-so-smart-contracts
 
 ```Blockchain Elements That Need Securing``` 
 
-Layer 1 
+```Layer 1 
 The Underlying blockchain protocol itself 
 (Bitcoin Core, GETH)
 
@@ -106,4 +106,4 @@ Decentralized exchanges
 "DEFI" exchanges typically built VIA smart contracts w/Web3 front-end)
 
 People 
-Social engineering. Rug pulls, asset protection.
+Social engineering. Rug pulls, asset protection.```
