@@ -76,3 +76,33 @@ https://github.com/Jiachi-Chen/TSE-ContractDefects
 
 ```Not-So-Smart-Contracts```
 https://github.com/Trent122/not-so-smart-contracts
+
+```Blockchain Elements That Need Securing```
+
+Layer 1 
+The Underlying blockchain protocol itself 
+(Bitcoin Core, GETH)
+
+Layer 2 
+An Overlaying network on top of layer one typically focused on scalability (Bitcoin lighting network)
+
+Smart Contracts 
+Automatically executing programs, deployments to the blockchain. (TokensmDApps,NFTs, etc.) 
+
+Software Wallets
+Custodial Vs. non-custodial
+
+Hardware Wallet
+Physical devices for storing private keys that are used to send and recevice funds.
+
+Mining Software 
+Programs used to run specialized hardware used to perform mining operations.
+
+Centrilzied Exchanges 
+Typically require KYC (Coinbase, Voyager, Binance, Kraken, etc.)
+
+Decentralized exchanges 
+"DEFI" exchanges typically built VIA smart contracts w/Web3 front-end)
+
+People 
+Social engineering. Rug pulls, asset protection.
