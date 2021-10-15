@@ -32,11 +32,11 @@ Using ```address.transfer()``` to instead ```address.send()``` and ```address.ca
 
 Contracts need to check whether the caller has permissions in some functions like suicide (L33 in Listing 1). The failure of permission checks can cause serious consequences. For example, if someone passes the permission check of suicide function, he/she can destroy the contract and stole all the Ethers. tx.origin can get the original address that kicked off the transaction, but this method is not reliable since the address returned by this method depends on the transaction state.
 
-3.) ```DOS Under External Infuence```
+3.) ```DOS Under External Infuence
 
 ```REF```:https://arxiv.org/pdf/1905.01467.pdf 
 
-```// Send 0.1 ETH to all members as bonus
+```// Send 0.1 ETH to all members as bonus```
 function giveBonus() returns (bool) {
     /** Unmatched Type Assignment */
     for (uint256 i = 0; i < members.length; i++) {
@@ -64,6 +64,7 @@ Avoid throwing exceptions in the body of a loop. We can return a boolean value i
 https://arxiv.org/pdf/2105.02881.pdf: Abstract—Ethereum Smart contracts use blockchain to transfer values among peers on networks without central agency. These programs are deployed on decentralized applications running on top of the blockchain consensus protocol to enable people make agreements in a transparent and conflict free environment. The security vulnerabilities within those smart contracts are a potential threat to the applications and have caused huge financial losses to their users. In this paper, we present a framework that combines static and dynamic analysis to detect Reentrancy vulnerabilities in Ethereum smart contracts. This framework generates an attacker contract based on the ABI specifications of smart contracts under test and analyzes the contract interaction to precisely report Reentrancy vulnerability. We conducted a preliminary evaluation of our proposed framework on 5 modified smart contracts from Etherscan and our framework was able to detect the Reentrancy vulnerability in all our modified contracts. Our framework analyzes smart contracts statically to identify potentially vulnerable functions and then uses dynamic analysis to precisely confirm Reentrancy vulnerability, thus achieving increased performance and reduced false positives.
 
 ```April,2020```
+
 https://arxiv.org/pdf/1905.01467.pdf:Abstract—Smart contracts are programs running on a blockchain. They are immutable to change, and hence can not be patched for bugs once deployed. Thus it is critical to ensure they are bug-free and well-designed before deployment. A Contract defect is an error, flaw or fault in a smart contract that causes it to produce an incorrect or unexpected result, or to behave in unintended ways. The detection of contract defects is a method to avoid potential bugs and improve the design of existing code. Since smart contracts contain numerous distinctive features, such as the gas system. decentralized, it is important to find smart contract specified defects. To fill this gap, we collected smart-contract-related posts from Ethereum StackExchange, as well as real-world smart contracts. We manually analyzed these posts and contracts; using them to define 20 kinds of contract defects. We categorized them into indicating potential security, availability, performance, maintainability and reusability problems. To validate if practitioners consider these contract as harmful, we created an online survey and received 138 responses from 32 different countries. Feedback showed these contract defects are harmful and removing them would improve the quality and robustness of smart contracts. We manually identified our defined contract defects in 587 real world smart contract and publicly released our dataset. Finally, we summarized 5 impacts caused by contract defects. These help developers better understand the symptoms of the defects and removal priority.
 
 ```Famous Attacks```
@@ -77,7 +78,7 @@ https://github.com/Jiachi-Chen/TSE-ContractDefects
 ```Not-So-Smart-Contracts```
 https://github.com/Trent122/not-so-smart-contracts
 
-```Blockchain Elements That Need Securing```
+```Blockchain Elements That Need Securing``` 
 
 Layer 1 
 The Underlying blockchain protocol itself 
