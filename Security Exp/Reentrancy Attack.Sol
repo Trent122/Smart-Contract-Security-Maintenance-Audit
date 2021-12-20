@@ -1,0 +1,13 @@
+pragma solidity ^0.8.2;
+
+//This contract contains a bug -test purpose only
+contract Intake {
+    ///@dev Mapping of ether shares of the contract.
+    mapping(address => uint) shares;
+    ///Withdraw current share.
+    function withdraw() public {
+        (bool success,) = msg.sender.call{value: shares[msg.sender] } ("");
+         if (success)
+             shares[msg.sender] = 0;
+    }
+}
