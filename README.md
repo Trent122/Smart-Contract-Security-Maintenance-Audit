@@ -1,5 +1,5 @@
 # Smart-Contract-Security-Maintenance
-Research Papers focused on Smart-contracts security topics. As well as listing all the encountered smart-contracts defects with a summary description. 🛡️
+Research Papers focused on Smart-contracts security topics. As well as listing all the encountered smart-contracts defects with a summary description. 🛡️ 0.8.0
 
 
 ![1_Sq3E9pFatJP0IRjvY3j3XQ](https://user-images.githubusercontent.com/59753390/136479198-dc493cc0-5de5-4014-baca-9424353be037.jpg)
